@@ -12,11 +12,11 @@ SELECT
   ,P.product_type
   ,P.product_rating    
   ,P.product_description  
-  ,('10') as tax_percentage        
+  ,(10.0) as tax_percentage        
   ,I.image_url AS product_image
   ,current_datetime as created_datetime
   ,current_datetime as updated_datetime
-  ,'yes' as is_active
+  ,TRUE as is_active
 FROM `thriftshop_staging.product-staging-prep` P
 INNER JOIN `thriftshop_staging.product-images-by-subcategory` I
   ON P.product_sub_category = I.product_sub_category
