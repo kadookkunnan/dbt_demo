@@ -7,8 +7,8 @@ with transform_deals as (
   CAST(product_id AS INT) as product_id,
   product_name,
   'Half Price' as deal_type,
-  DATETIME(2022, 09, 19, 00, 00, 00) as deal_start_datetime,
-  DATETIME_ADD(DATETIME "2022-09-20 00:00:00", INTERVAL 1 WEEK) as deal_end_datetime,
+  DATETIME(2022, 09, 25, 00, 00, 00) as deal_start_datetime,
+  DATETIME_ADD(DATETIME "2022-09-26 00:00:00", INTERVAL 1 WEEK) as deal_end_datetime,
   '50 %' deal_percentage,
   (market_price * 0.5) as discounted_price,
   current_datetime as created_datetime
