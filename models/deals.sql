@@ -10,7 +10,7 @@ with transform_deals as (
   DATETIME(2022, 10, 02, 00, 00, 00) as deal_start_datetime,
   DATETIME_ADD(DATETIME "2022-10-03 00:00:00", INTERVAL 1 WEEK) as deal_end_datetime,
   '50 %' deal_percentage,
-  (market_price * 0.5) as discounted_price,
+  (CAST(market_price AS FLOAT64) * 0.5) as discounted_price,
   current_datetime as created_datetime
   from `thriftshop_staging.product-staging-prep`
   order by rand() limit 150
