@@ -2,17 +2,17 @@
 
 with transform_product as (
 SELECT
-  P.product_id  
+  CAST(P.product_id AS INT64) AS product_id 
   ,P.product_name  
   ,P.product_category  
   ,P.product_sub_category    
   ,P.brand        
-  ,P.sale_price
-  ,P.market_price    
+  ,CAST(P.sale_price AS FLOAT64) AS sale_price
+  ,CAST(P.market_price AS FLOAT64) AS market_price   
   ,P.product_type
-  ,P.product_rating    
-  ,P.product_description  
-  ,(10.0) as tax_percentage        
+  ,CAST(P.product_rating AS FLOAT64) AS product_rating
+  ,P.product_description
+  ,(10.0) as tax_percentage
   ,I.image_url AS product_image
   ,current_datetime as created_datetime
   ,current_datetime as updated_datetime
